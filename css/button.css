@@ -1,0 +1,67 @@
+.btn {
+  border: 1px solid transparent;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &.push {
+    background-color: blueviolet;
+  }
+
+  &.pop {
+    background-color: purple;
+  }
+
+  &.peek {
+    background-color: yellow;
+    color: black;
+  }
+
+  &[disabled] {
+    background-color: cadetblue;
+    cursor: wait;
+  }
+}
+
+.button-group {
+  margin-inline: 1rem;
+  display: flex;
+
+  & button:not(:last-child) {
+    margin-inline-end: 1rem;
+  }
+
+  & button:last-child {
+    margin-inline-start: 4rem;
+  }
+
+
+}
+
+.audio-btn {
+  border: 1px solid transparent;
+  background-color: var(--bg-primary);
+  fill: var(--tc-primary);
+  cursor: pointer;
+  display: flex;
+  color: var(--tc-primary);
+  align-items: center;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 6px;
+  padding: 6px;
+  width: 30px;
+
+  &:hover {
+    background-color: var(--gray);
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}

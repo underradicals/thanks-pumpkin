@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Stack Visualization</title>
+</head>
+
+<body>
+  <h1 class="title">Stack Visualization</h1>
+  <section class="main-content">
+    <section class="info-icon-container">
+      <svg data-type="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path data-type="circle-path"
+          d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
+      </svg>
+      <svg data-type="letter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+        <path
+          d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 224 32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0 0-192-32 0c-17.7 0-32-14.3-32-32z" />
+      </svg>
+    </section>
+    <div class="stack"></div>
+    <div class="controls">
+      <div class="control-group">
+        <p>
+          <span>Size of Stack</span>
+          <span class="stack-size">&colon;
+            <span>0</span>
+          </span>
+        </p>
+        <p>
+          <span>Top of Stack</span>
+          <span class="stack-top">&colon;
+            <span>&horbar;</span>
+          </span>
+        </p>
+      </div>
+      <div class="button-group">
+        <button class="btn push">Push</button>
+        <button class="btn pop">Pop</button>
+        <button class="btn peek">Peek</button>
+        <button class="audio-btn">
+          <svg class="audio on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <path
+              d="M533.6 32.5C598.5 85.2 640 165.8 640 256s-41.5 170.7-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64l0 384c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352 64 352c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l67.8 0L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z" />
+          </svg>
+          <svg class="audio off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <path
+              d="M301.1 34.8C312.6 40 320 51.4 320 64l0 384c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352 64 352c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l67.8 0L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+
+    <dialog class="info-modal">
+      <div class="close-button-container">
+        <p class="close-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+          </svg>
+        </p>
+      </div>
+      <p>
+        A Stack is a <span class="bold">Last-In-First-Out Data Structure.</span> This means that elements are inserted
+        from back to front (bottom
+        to top), so that when it comes to removing elements, the last element that was inserted will be removed first.
+        Elements are not just stored but are also implicitly ranked based on their insertion order, that means they have
+        an Ordinality, namely the first element in is the last to be removed, and the last element in will be the first
+        to be removed. The most recently added element has the highest "rank" or is the first in line to be accessed or
+        removed.
+    </dialog>
+
+
+    <p class="fx-attribution">
+      Sound Effect by <a
+        href="https://pixabay.com/users/sonixfxsounds-49053354/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=305770"
+        target="_blank">SonixFXSounds</a>
+      from <a
+        href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=305770"
+        target="_blank">Pixabay</a>
+    </p>
+  </section>
+  <section class="sound-files" aria-hidden="true">
+    <audio id="push-sound" aria-hidden="true">
+      <source src="./audio/push.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="pop-sound" aria-hidden="true">
+      <source src="./audio/pop.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="peek-sound" aria-hidden="true">
+      <source src="./audio/peek.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>

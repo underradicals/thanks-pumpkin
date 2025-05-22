@@ -1,0 +1,39 @@
+.stack,
+.controls {
+  grid-row: 1 / -1;
+}
+
+.stack {
+  grid-column: 1 / 2;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  border-right: 4px solid var(--bg-tertiary);
+  border-left: 4px solid var(--bg-tertiary);
+  border-bottom: 4px solid var(--bg-tertiary);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  align-self: end;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 3rem;
+  align-content: end;
+  gap: 0.5rem;
+
+  & .brick {
+    display: block;
+    height: 3rem;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--stack-color);
+    text-align: center;
+    padding-block: 0.5rem;
+    font-size: 2rem;
+    color: whitesmoke;
+  }
+}
+
+.controls {
+  grid-column: 2 / -1;
+}

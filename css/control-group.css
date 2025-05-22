@@ -1,0 +1,31 @@
+.control-group {
+
+  display: flex;
+  gap: 1rem;
+  margin-inline: 1rem;
+
+  & p:first-child {
+    background-color: var(--bg-secondary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: max-content;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    border-radius: 8px;
+    color: var(--tc-secondary);
+  }
+
+  & p:first-child span>span {
+    padding-inline: 0.5rem;
+    color: yellow;
+  }
+
+  & p:last-child {
+    background-color: var(--bg-secondary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: max-content;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    border-radius: 8px;
+    color: var(--tc-secondary);
+  }
+}

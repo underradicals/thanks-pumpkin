@@ -1,0 +1,15 @@
+.animate-up {
+  animation-name: float-up;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.animate-down {
+  animation-name: float-down;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
