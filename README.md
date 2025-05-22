@@ -1,9 +1,3 @@
-# thanks-pumpkin
-
-## Stacks Visualization
-
----
-
 # 🎃 Thanks, Pumpkin
 
 **Thanks, Pumpkin** is a lightweight, browser-based visualization tool that brings stack operations to life. Designed for educators, students, and developers, it offers an interactive way to understand and demonstrate how stacks work—making abstract concepts tangible through engaging visuals.
